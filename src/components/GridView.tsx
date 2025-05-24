@@ -1,9 +1,8 @@
-import {Urls, isMobile} from "./Data.ts";
+import {Urls, isMobile} from "../Data.ts";
 import {Parallax} from "react-scroll-parallax";
 
 
 export const GridView = () => {
-    console.log(isMobile())
     return (
         <div style={{position: 'relative', width: '100%', overflow: 'hidden'}}>
             <div style={{
@@ -21,15 +20,14 @@ export const GridView = () => {
             <div
                 style={{
                     width: '100%',
-                    // maxWidth: '1400px',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(4, 1fr)',
                     gap: '3rem',
                     justifyContent: 'center',
                     zIndex: 0,
                     height: '100vh',
-                    maxHeight: '60vh',
-                    overflow: 'hidden',
+                    maxHeight: isMobile() ? '40vh' : '60vh',
+                    overflow: 'hidden'
                 }}
             >
                 {Urls.map((url, index) => (

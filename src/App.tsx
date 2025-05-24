@@ -5,6 +5,7 @@ import {WhyShop} from "./components/WhyShop.tsx";
 import {GlobalProvider} from "./context/GlobalContext.tsx";
 import ButtonAppBar from "./components/ButtonAppBar.tsx";
 import {HeroSection} from "./components/HeroSection.tsx";
+import {Tos} from "./components/Tos.tsx";
 
 const App = () => {
 
@@ -24,8 +25,6 @@ const App = () => {
                 <section
                     style={{
                         position: 'relative',
-                        marginTop: '-8rem',
-                        marginBottom: '-8rem',
                         zIndex: 0,
                         display: 'flex',
                         justifyContent: 'center',
@@ -34,15 +33,16 @@ const App = () => {
                 >
                     <GridView/>
                 </section>
-                <section id={'why-shop'} style={{marginTop: '7rem', marginBottom: '7rem'}}>
+                <section id={'why-shop'} >
                     <WhyShop/>
                 </section>
-                <section style={{margin: '1000px'}}></section>
                 <section id={'about'}>
                     <About/>
                 </section>
                 <section id={'tos'}>
+                    <Tos/>
                 </section>
+
             </ParallaxProvider>
         </GlobalProvider>
     );

@@ -1,27 +1,41 @@
-import { useState, useEffect } from 'react';
-import { Box, Typography, Container, Fade, Grow } from '@mui/material';
-import { styled, keyframes } from '@mui/material/styles';
-import { Parallax } from "react-scroll-parallax";
+import {useState, useEffect} from 'react';
+import {Box, Typography, Container, Fade} from '@mui/material';
+import {styled, keyframes} from '@mui/material/styles';
+import {Parallax} from "react-scroll-parallax";
 
 // Keyframe animations
 const gradientShift = keyframes`
-  0% { background-position: 0 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0 50%; }
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 `;
 
 const float = keyframes`
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
 `;
 
 const pulse = keyframes`
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.8;
+    }
 `;
 
 // Styled components
-const HeroContainer = styled(Box)(({ theme }) => ({
+const HeroContainer = styled(Box)(({theme}) => ({
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
@@ -64,7 +78,7 @@ const FloatingElement = styled(Box)(() => ({
     zIndex: 0,
 }));
 
-const MainTitle = styled(Typography)(({ theme }) => ({
+const MainTitle = styled(Typography)(({theme}) => ({
     fontSize: 'clamp(3rem, 12vw, 8rem)',
     fontWeight: 900,
     letterSpacing: '-0.02em',
@@ -82,26 +96,8 @@ const MainTitle = styled(Typography)(({ theme }) => ({
     zIndex: 1,
 }));
 
-const LogoContainer = styled(Box)(({ theme }) => ({
-    marginBottom: theme.spacing(4),
-    position: 'relative',
-    zIndex: 1,
-    '& img': {
-        width: '300px',
-        maxWidth: '90vw',
-        height: 'auto',
-        borderRadius: '30px',
-        boxShadow: '0 25px 60px rgba(0, 0, 0, 0.15), 0 10px 25px rgba(59, 130, 246, 0.2)',
-        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        cursor: 'pointer',
-        '&:hover': {
-            transform: 'translateY(-10px) scale(1.05)',
-            boxShadow: '0 35px 80px rgba(0, 0, 0, 0.2), 0 15px 35px rgba(59, 130, 246, 0.3)',
-        },
-    },
-}));
 
-const SubtitleContainer = styled(Box)(({ theme }) => ({
+const SubtitleContainer = styled(Box)(({theme}) => ({
     maxWidth: '700px',
     margin: '0 auto',
     padding: theme.spacing(2),
@@ -109,7 +105,7 @@ const SubtitleContainer = styled(Box)(({ theme }) => ({
     zIndex: 1,
 }));
 
-const SubtitleText = styled(Typography)(({ theme }) => ({
+const SubtitleText = styled(Typography)(({theme}) => ({
     fontSize: '1.25rem',
     lineHeight: 1.6,
     fontWeight: 600,
@@ -177,37 +173,25 @@ export const HeroSection = () => {
                 }}
             />
 
-            <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+            <Container maxWidth="lg" sx={{position: 'relative', zIndex: 1}}>
                 {/* Main Title */}
+
                 <Fade in={isLoaded} timeout={1000}>
-                    <MainTitle variant="h1" >
+                    <MainTitle variant="h1">
                         Peddlr
                     </MainTitle>
                 </Fade>
-
-                {/* Logo with Parallax */}
-                <Grow in={isLoaded} timeout={1500}>
-                    <LogoContainer>
-                        <Parallax speed={15}>
-                            <img
-                                src="https://nstpyv38l8.ufs.sh/f/xeiOjjdkr8jc5sxQDBJABUu6E8h0moi1SFxkt2cMayWZO7XT"
-                                alt="Peddlr Logo"
-                            />
-                        </Parallax>
-                    </LogoContainer>
-                </Grow>
-
-                {/* Subtitle with Parallax */}
                 <Fade in={isLoaded} timeout={2000}>
                     <SubtitleContainer>
                         <Parallax speed={-5}>
-                            <SubtitleText variant="h3" >
+                            <SubtitleText variant="h3">
                                 The <HighlightText>Marketplace</HighlightText> for the FX-Obsessed
-                                <br />
-                                <Box component="span" sx={{ fontSize: '1rem', fontWeight: 500, opacity: 0.9 }}>
+                                <br/>
+                                <Box component="span" sx={{fontSize: '1rem', fontWeight: 500, opacity: 0.9}}>
                                     Launching soon. Join the movement. Trade gear. Support builders. Skip the middleman.
-                                    <br />
-                                    The marketplace where the <HighlightText>pedal people</HighlightText> and <HighlightText>synth heads</HighlightText> connect!
+                                    <br/>
+                                    The marketplace where the <HighlightText>pedal people</HighlightText> and <HighlightText>synth
+                                    heads</HighlightText> connect!
                                 </Box>
                             </SubtitleText>
                         </Parallax>

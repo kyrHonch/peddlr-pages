@@ -24,3 +24,7 @@ export const Urls = [
     "https://nstpyv38l8.ufs.sh/f/xeiOjjdkr8jc2UwYkBdhvxCraLBe4nbkQcP68qW7wK3uZzdM",
     "https://nstpyv38l8.ufs.sh/f/xeiOjjdkr8jcMlQvx44SnJ5KqtpPENlrmWx7cG2Sa1gof8Vs"
 ]
+
+export const isMobile = () => {
+    return window.innerWidth <= 768;
+}

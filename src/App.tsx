@@ -1,6 +1,8 @@
 import {Parallax, ParallaxProvider} from 'react-scroll-parallax';
 import {useRef, useEffect, useState} from 'react';
 import {GridView} from "./GridView.tsx";
+import {About} from "./About.tsx";
+import {WhyShop} from "./WhyShop.tsx";
 
 const App = () => {
     const headingRef = useRef<HTMLHeadingElement | null>(null);
@@ -150,71 +152,15 @@ const App = () => {
                 id={'products'}
             >
                 <GridView/>
-
-                {/*<div*/}
-                {/*    style={{*/}
-                {/*        content: '""',*/}
-                {/*        position: 'absolute',*/}
-                {/*        top: 0,*/}
-                {/*        left: 0,*/}
-                {/*        right: 0,*/}
-                {/*        bottom: 0,*/}
-                {/*        backgroundColor: 'rgba(0, 0, 0, 0.4)',*/}
-                {/*        zIndex: 1,*/}
-                {/*        pointerEvents: 'none',*/}
-                {/*    }}*/}
-                {/*></div>*/}
-                {/*<div*/}
-                {/*    style={{*/}
-                {/*        width: '100%',*/}
-                {/*        maxWidth: '1400px',*/}
-                {/*        display: 'flex',*/}
-                {/*        flexWrap: 'wrap',*/}
-                {/*        gap: '2rem',*/}
-                {/*        justifyContent: 'center',*/}
-                {/*        zIndex: 0,*/}
-                {/*    }}*/}
-                {/*>*/}
-                {/*    {(() => {*/}
-
-                {/*        return [[-10, 0], [10, 2], [-10, 1], [10, 3]].map(([speed, colIndex]) => (*/}
-                {/*            <div key={colIndex} style={{*/}
-                {/*                display: 'grid',*/}
-                {/*                // flexDirection: 'column',*/}
-                {/*                gridTemplateRows: '1fr 1fr 1fr',*/}
-                {/*                gap: '1.5rem',*/}
-                {/*                zIndex: 0,*/}
-                {/*                overflow: 'hidden',*/}
-                {/*                maxHeight: '600px',*/}
-                {/*                width: '100%',*/}
-                {/*                maxWidth: '200px'*/}
-                {/*            }}>*/}
-                {/*                {[0, 1, 2].map((i) => {*/}
-                {/*                    const index = colIndex * 4 + i;*/}
-                {/*                    return (*/}
-                {/*                        <Parallax speed={speed + i} key={index}>*/}
-                {/*                            <div*/}
-                {/*                                // backgroundImage={urls[index % urls.length]}*/}
-                {/*                                // alt={`Pedal ${index + 1}`}*/}
-                {/*                                style={{*/}
-                {/*                                    backgroundImage: `url(${Urls[index % Urls.length]})`,*/}
-                {/*                                    width: '100%',*/}
-                {/*                                    height: '100%',*/}
-                {/*                                    objectFit: 'contain',*/}
-                {/*                                }}*/}
-                {/*                            ></div>*/}
-                {/*                        </Parallax>*/}
-                {/*                    );*/}
-                {/*                })}*/}
-                {/*            </div>*/}
-                {/*        ));*/}
-                {/*    })()}*/}
-                {/*</div>*/}
             </section>
-            <section style={{margin: "600px"}}></section>
+            <section id={'why-shop'}>
+                <WhyShop/>
+            </section>
+            <section id={'about'}>
+                <About/>
+            </section>
         </ParallaxProvider>
-    )
-        ;
+    );
 };
 
 export default App;

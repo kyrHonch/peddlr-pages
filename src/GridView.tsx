@@ -1,9 +1,11 @@
-import {Urls} from "./Data.ts";
+import {Urls, isMobile} from "./Data.ts";
 import {Parallax} from "react-scroll-parallax";
 
+
 export const GridView = () => {
+    console.log(isMobile())
     return (
-        <div style={{ position: 'relative' }}>
+        <div style={{position: 'relative', width: '100%', overflow: 'hidden'}}>
             <div style={{
                 content: '""',
                 position: 'absolute',
@@ -14,7 +16,7 @@ export const GridView = () => {
                 backgroundColor: 'rgba(0, 0, 0, 0.4)',
                 zIndex: 1,
                 pointerEvents: 'none',
-            }} />
+            }}/>
 
             <div
                 style={{
@@ -26,6 +28,7 @@ export const GridView = () => {
                     justifyContent: 'center',
                     zIndex: 0,
                     height: '100vh',
+                    maxHeight: '60vh',
                     overflow: 'hidden',
                 }}
             >
@@ -38,7 +41,7 @@ export const GridView = () => {
                             overflow: 'hidden',
                             maxHeight: '300px',
                             width: '100%',
-                            maxWidth: '200px'
+                            maxWidth: '200px',
                         }}>
                             <img
                                 src={url}
@@ -46,7 +49,7 @@ export const GridView = () => {
                                 style={{
                                     width: '100%',
                                     height: '100%',
-                                    objectFit: 'contain',
+                                    objectFit: 'cover',
                                 }}
                             />
                         </div>

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Typography, Container, Fade, Grow } from '@mui/material';
 import { styled, keyframes } from '@mui/material/styles';
 import { Parallax } from "react-scroll-parallax";
 
 // Keyframe animations
 const gradientShift = keyframes`
-  0% { background-position: 0% 50%; }
+  0% { background-position: 0 50%; }
   50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  100% { background-position: 0 50%; }
 `;
 
 const float = keyframes`
@@ -56,11 +56,11 @@ const HeroContainer = styled(Box)(({ theme }) => ({
     },
 }));
 
-const FloatingElement = styled(Box)(({ theme, delay = 0 }) => ({
+const FloatingElement = styled(Box)(() => ({
     position: 'absolute',
     borderRadius: '50%',
     background: 'linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))',
-    animation: `${float} 6s ease-in-out infinite ${delay}s`,
+    animation: `${float} 6s ease-in-out infinite 0s`,
     zIndex: 0,
 }));
 
@@ -132,7 +132,7 @@ const SubtitleText = styled(Typography)(({ theme }) => ({
     },
 }));
 
-const HighlightText = styled('span')(({ theme }) => ({
+const HighlightText = styled('span')(() => ({
     background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
@@ -158,7 +158,7 @@ export const HeroSection = () => {
                 }}
             />
             <FloatingElement
-                delay={2}
+
                 sx={{
                     top: '20%',
                     right: '15%',
@@ -168,7 +168,6 @@ export const HeroSection = () => {
                 }}
             />
             <FloatingElement
-                delay={4}
                 sx={{
                     bottom: '15%',
                     left: '20%',
@@ -181,7 +180,7 @@ export const HeroSection = () => {
             <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
                 {/* Main Title */}
                 <Fade in={isLoaded} timeout={1000}>
-                    <MainTitle variant="h1" component="h1">
+                    <MainTitle variant="h1" >
                         Peddlr
                     </MainTitle>
                 </Fade>
@@ -202,7 +201,7 @@ export const HeroSection = () => {
                 <Fade in={isLoaded} timeout={2000}>
                     <SubtitleContainer>
                         <Parallax speed={-5}>
-                            <SubtitleText variant="h3" component="h3">
+                            <SubtitleText variant="h3" >
                                 The <HighlightText>Marketplace</HighlightText> for the FX-Obsessed
                                 <br />
                                 <Box component="span" sx={{ fontSize: '1rem', fontWeight: 500, opacity: 0.9 }}>

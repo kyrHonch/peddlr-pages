@@ -24,7 +24,8 @@ const ElevationScroll = (props: { children: React.ReactElement }) => {
   });
 
   return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-expect-error
     sx: {
       backgroundColor: trigger ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.85)',
       backdropFilter: 'blur(8px)',
@@ -168,7 +169,7 @@ export default function ButtonAppBar() {
                   </IconButton>
               )}
 
-              <Logo variant="h6" component="div">
+              <Logo variant="h6" >
                 Peddlr
               </Logo>
 

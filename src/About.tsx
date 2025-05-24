@@ -12,7 +12,7 @@ export const About = () => {
     }, []);
     return (
         <Container maxWidth="lg" sx={{py: 4}}>
-            <Typography data-aos='fade-right' variant="h3" component="h1" gutterBottom>
+            <Typography data-aos='fade-right' variant="h3" component="h1" align="center" gutterBottom>
                 Welcome to my online effects pedal marketplace!
             </Typography>
 

@@ -14,8 +14,7 @@ export const WhyShop = () => {
     const aos_mobile = "fade-up";
     return (
         <Container maxWidth="lg" sx={{py: 4, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            {/*<h2 data-aos="fade-up" style={{textAlign: 'center', fontSize: '2rem', marginBottom: '2rem'}}>Why Shop At Peddlr</h2>*/}
-            <Typography data-aos='fade-right' variant={'h3'}>Why Shop At Peddlr</Typography>
+            <Typography data-aos='fade-right' variant={'h3'} align="center">Why Shop At Peddlr</Typography>
             <div data-aos={aos_mobile}>
                 <Grid container spacing={4} alignItems="center">
                     <Grid size={grid_view} height={'100%'}>

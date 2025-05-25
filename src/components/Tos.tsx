@@ -186,7 +186,7 @@ export const Tos = () => {
                         <Typography component="div">
                             <p>For any questions or concerns regarding these Terms and Conditions, please contact us at:</p>
                             <p><strong>Peddler App</strong><br/>
-                                Email: support@peddlerapps.com</p>
+                                Email: tyler@peddlerapps.com</p>
                             <p style={{ marginTop: '16px', fontStyle: 'italic' }}>
                                 By registering as a member and using Peddler App, you agree to comply with these Terms and Conditions. Thank you for being part of our trusted network.
                             </p>
